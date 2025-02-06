@@ -1,0 +1,16 @@
+# Ignore VS Code settings and extensions
+.vscode/
+
+# Ignore Python environment
+venv/
+__pycache__/
+
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore compiled files and logs
+*.log
+*.pyc
+*.pyo
+*.pyd
+.DS_Store

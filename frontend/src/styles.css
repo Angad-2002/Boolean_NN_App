@@ -1,0 +1,118 @@
+/* styles.css */
+body {
+    background-color: #121212; /* Dark background */
+    background: linear-gradient(135deg, #1e1e1e, #0d0d0d); /* Dark gradient background */
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    color: #e0e0e0; /* Light text color */
+}
+
+.container {
+    border: 2px solid #bb86fc; /* Purple border */
+    border-radius: 25px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    padding: 20px;
+}
+
+h1 {
+    color: #bb86fc; /* Light purple for title */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8); /* Enhanced shadow for depth */
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+    font-weight: bold; /* Make it bold */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Slide in from above */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    background: rgba(40, 40, 40, 0.9); /* Semi-transparent dark card */
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3); /* Enhanced shadow on hover */
+}
+
+.card h5 {
+    color: #03dac6; /* Light teal for card headings */
+    font-weight: bold; /* Make headings bold */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    animation: slideIn 0.5s ease-in-out; /* Slide-in animation */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px); /* Slide in from left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.form-label {
+    font-weight: bold;
+    color: #03dac6; /* Teal color for labels */
+    transition: color 0.3s; /* Transition for label color */
+}
+
+.form-control,
+.form-select {
+    border: 2px solid #03dac6; /* Teal border */
+    background-color: #1f1f1f; /* Darker input background */
+    color: #e0e0e0 !important; /* Ensures light text color */
+    caret-color: #bb86fc; /* Makes text cursor visible */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px;
+    transition: all 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #272727; /* Slightly lighter dark on focus */
+    border-color: #bb86fc; /* Purple border on focus */
+    outline: none; /* Removes default browser outline */
+    color: #ffffff !important; /* Ensures text remains visible */
+    transform: translateY(-2px); /* Lift effect on focus */
+}
+
+.btn {
+    background: linear-gradient(45deg, #03dac6, #bb86fc); /* Gradient button */
+    color: #fff; /* White text */
+    font-size: 1.5rem; /* Larger font size */
+    padding: 10px 20px; /* Padding for button */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer; /* Pointer cursor */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transition for scale and shadow */
+}
+
+.btn:hover {
+    transform: scale(1.1); /* Scale up on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+.mt-4 {
+    margin-top: 2rem !important; /* More space above the chart */
+}
+
+.scatter-chart {
+    background-color: #1f1f1f; /* Dark background for chart */
+    border-radius: 15px;
+    padding: 10px;
+}
+
