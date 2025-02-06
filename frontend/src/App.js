@@ -37,7 +37,7 @@ const App = () => {
 
     const trainModel = async () => {
         try {
-            const response = await axios.post("http://localhost:5000/train", {
+            const response = await axios.post("/train", {
                 num_variables: numVariables,
                 boolean_function: booleanFunction,
                 network_structure: layers,

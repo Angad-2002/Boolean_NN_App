@@ -9,7 +9,7 @@ from tensorflow.keras import layers
 from flask_cors import CORS
 from sklearn.decomposition import PCA
 
-app = Flask(__name__)
+app = app = Flask(__name__, static_folder='./build', static_url_path='/')
 CORS(app)
 
 def generate_truth_table(num_variables, boolean_function):
