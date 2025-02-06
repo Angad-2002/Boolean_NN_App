@@ -1,16 +1,22 @@
 import os
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 from flask_cors import CORS
 from sklearn.decomposition import PCA
+import os
 
-app = app = Flask(__name__, static_folder='./build', static_url_path='/')
+app = Flask(__name__, static_folder='./build', static_url_path='/')
 CORS(app)
+
+# Route for serving the React app's index.html for the root URL
+@app.route('/')
+def index():
+    return send_from_directory(app.static_folder, 'index.html')
 
 def generate_truth_table(num_variables, boolean_function):
     inputs = np.array([[int(x) for x in format(i, f'0{num_variables}b')] for i in range(2**num_variables)])
@@ -59,4 +65,6 @@ def train():
     return jsonify({"scatter_plot": scatter_data})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Using environment variable for PORT
+    port = int(os.environ.get('PORT', 5000))  # Default to 5000 if no port is provided
+    app.run(debug=False, host='0.0.0.0', port=port)  # Listening on the correct public port
